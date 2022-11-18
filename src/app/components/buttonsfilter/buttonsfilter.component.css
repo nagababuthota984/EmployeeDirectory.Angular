@@ -1,0 +1,15 @@
+.alpha-btn{
+    background-color: deepskyblue;
+    color: white;
+    padding: 3;
+    border:0px;
+    margin:0px 0px 10px 5px;
+    height: 30px;
+    width: 30px;
+}
+.alpha-btn:hover{
+    background-color: #f9f9f9;
+    color:deepskyblue;
+    border:2px solid deepskyblue;
+    transition-duration: 200ms;
+}
