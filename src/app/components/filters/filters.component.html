@@ -1,23 +1,23 @@
 <div class="container">
     <div class="row">
-        <app-buttonsfilter></app-buttonsfilter>
+        <app-buttonsfilter class="ms-2"></app-buttonsfilter>
     </div>
     <div class="row my-2">
-        <div class="col-3">
-            <input class="form-control form-control-sm" type="search" placeholder="search...">
+        <div class="col-4">
+            <span class="col-6 mx-2">Search</span>
+            <input class="form-control-sm col-6" type="search" placeholder="enter any keyword...">
         </div>
-        <div class="col-3 mx-1">
+        <div class="col-5">
             <span class="col-6">Filter by </span>
-            <select class="form-control-sm col-6">
+            <select class="form-control-sm col-3">
                 <option>Name</option>
                 <option>Department</option>
                 <option>Office</option>
                 <option>Job Title</option>
             </select>
         </div>
-        <div class="col-2"></div>
-        <div class="col-2">
-            <button class="btn btn-primary">Add Employee</button>
+        <div class="col-3">
+            <button class="btn btn-sm btn-primary float-end me-2">Add Employee</button>
         </div>
     </div>
 </div>

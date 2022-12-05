@@ -1,24 +1,16 @@
-<div class="container">
+<div class="container ms-1">
     <div class="row">
-        <p class="fw-bold">Departments</p>
-        <ul>
-            <li>Light side</li>
-            <li>Dark side</li>
-        </ul>
+        <p class="fw-bold m-0">Departments</p>
+        <p class="m-0" *ngFor="let dept of departments">{{dept}}</p>
+       
     </div>
     <div class="row">
-        <p class="fw-bold">Offices</p>
-        <ul>
-            <li>Palpatina</li>
-            <li>Pandora</li>
-        </ul>
+        <p class="fw-bold m-0 mt-2">Offices</p>
+        <p class="m-0" *ngFor="let office of offices">{{office}}</p>
     </div>
     <div class="row">
-        <p class="fw-bold">Job Titles</p>
-        <ul>
-            <li>Jedi</li>
-            <li>Apprentice</li>
-        </ul>
+        <p class="fw-bold m-0 mt-2">Job Titles</p>
+        <p class="m-0" *ngFor="let jobTitle of jobTitles">{{jobTitle}}</p>
     </div>
 
 </div>
