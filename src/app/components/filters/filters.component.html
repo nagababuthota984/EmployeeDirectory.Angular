@@ -3,21 +3,23 @@
         <app-buttonsfilter class="ms-2"></app-buttonsfilter>
     </div>
     <div class="row my-2">
-        <div class="col-4">
-            <span class="col-6 mx-2">Search</span>
-            <input class="form-control-sm col-6" type="search" placeholder="enter any keyword...">
-        </div>
         <div class="col-5">
+            <span class="col-3 mx-2">Search</span>
+            <input class="form-control-sm me-4 col-5"  type="search" (keyup)="searchKeyword($event)" placeholder="enter any keyword...">
+            <button class="clear-btn ms-4 col-2">Clear filter</button>
+        </div>
+        <div class="col-4">
             <span class="col-6">Filter by </span>
-            <select class="form-control-sm col-3">
-                <option>Name</option>
+            <select class="form-control-sm col-4">
+                <option>First Name</option>
+                <option>Last Name</option>
                 <option>Department</option>
                 <option>Office</option>
                 <option>Job Title</option>
             </select>
         </div>
         <div class="col-3">
-            <button class="btn btn-sm btn-primary float-end me-2">Add Employee</button>
+            <button class="add-employee-btn float-end me-2">Add Employee</button>
         </div>
     </div>
 </div>

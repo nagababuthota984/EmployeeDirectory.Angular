@@ -6,8 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./filters.component.css']
 })
 export class FiltersComponent implements OnInit {
+  constructor() {
+   }
 
-  constructor() { }
+  searchKeyword(event:any)
+  {
+      let searchText = event.target.value;
+  }
 
   ngOnInit(): void {
   }

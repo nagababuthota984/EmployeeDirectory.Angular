@@ -9,6 +9,8 @@ import { FiltersComponent } from './components/filters/filters.component';
 import { EmployeeListComponent } from './components/employee-list/employee-list.component';
 import { ButtonsfilterComponent } from './components/buttonsfilter/buttonsfilter.component';
 import { CardComponent } from './components/card/card.component';
+import { EmployeeService } from './services/employee.service';
+import { DataService } from './services/data.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,7 @@ import { CardComponent } from './components/card/card.component';
     AppRoutingModule,
     NgbModule
   ],
-  providers: [],
+  providers: [EmployeeService,DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

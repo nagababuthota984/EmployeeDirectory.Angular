@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { DataService } from 'src/app/services/dataservice';
+import { Component, Input, OnInit } from '@angular/core';
+import { Employee } from 'src/app/models/employee';
+import { DataService } from 'src/app/services/data.service';
+import { EmployeeService } from 'src/app/services/employee.service';
 
 @Component({
   selector: 'app-employee-list',
@@ -7,9 +9,15 @@ import { DataService } from 'src/app/services/dataservice';
   styleUrls: ['./employee-list.component.css']
 })
 export class EmployeeListComponent implements OnInit {
-  public employees : string[];
-  constructor() { 
-    this.employees = new DataService().employee;
+  public employees: Array<Employee>;
+  public employeeService: EmployeeService;
+  public dataService:DataService;
+
+  constructor(empService: EmployeeService, dataService: DataService) {
+    this.employeeService = empService;
+    this.dataService =  dataService;
+    this.employees = dataService.EmployeeData;
+
   }
 
   ngOnInit(): void {
