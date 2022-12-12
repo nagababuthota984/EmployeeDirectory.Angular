@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  public searchText!:string;
+  constructor(){
+    
+  }
+searchTriggered(searchKeyword: string) {
+   this.searchText = searchKeyword;
+}
   title = 'EmployeeDirectory';
 }

@@ -1,9 +1,10 @@
 import { Injectable } from "@angular/core"
 import { Employee } from "../models/employee"
 @Injectable()
+
 export class DataService{
 
-    public EmployeeData:Array<Employee> = [
+    public EmployeeData:Employee[] = [
         new Employee("Aaron","Zollo","India","Sharepoint practice head","Product Engineering"),
         new Employee("Marques","Brownlee","India","Software Developer","Product Engineering"),
         new Employee("Jhonny","harris","India","Software Developer","Data & Analytics"),

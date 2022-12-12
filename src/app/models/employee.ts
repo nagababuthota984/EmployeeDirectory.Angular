@@ -1,4 +1,3 @@
-
 export class Employee{
     public FirstName:string;
     public LastName:string;
