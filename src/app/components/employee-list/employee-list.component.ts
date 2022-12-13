@@ -12,23 +12,15 @@ import { EmployeeService } from 'src/app/services/employee.service';
 export class EmployeeListComponent implements OnInit {
   public employees: Employee[];
   public filteredEmployees: Employee[];
-  public employeeService: EmployeeService;
-  public dataService:DataService;
-  @Input('searchKeyword') public searchText! : string;
-  constructor(empService: EmployeeService, dataService: DataService) {
-    this.employeeService = empService;
-    this.dataService =  dataService;
+
+  constructor(private empService: EmployeeService, private dataService: DataService) {
     this.filteredEmployees = this.employees = dataService.EmployeeData;
-
   }
-
-  ngOnChanges():void{
-    if(this.searchText.length!=0)
-      this.filteredEmployees = this.employeeService.searchData(this.searchText,SearchFilters.FirstName);
-    else
-      this.filteredEmployees = this.employees;
-  }
+  
   ngOnInit(): void {
+    this.empService.searchTextEmitter.subscribe((value)=>{
+      this.filteredEmployees = this.empService.searchData(value,SearchFilters.FirstName);
+    });
   }
 
 }
