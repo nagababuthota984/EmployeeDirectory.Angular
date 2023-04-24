@@ -3,15 +3,7 @@
     background-color: forestgreen;
     color:white;
     border:none;
-    height: 35px;
-}
-
-.clear-btn:hover
-{
-    background-color: white;
-    color: forestgreen;
-    transition-duration: 200ms;
-    border:2px solid forestgreen;
+    font-weight:600;
 }
 
 .add-employee-btn
@@ -19,13 +11,5 @@
     background-color: deepskyblue;
     color:white;
     border:none;
-    height: 35px;
-    
-}
-.add-employee-btn:hover
-{
-    background-color: white;
-    color:deepskyblue;
-    border:2px solid deepskyblue;
-    transition-duration:200ms;
+    font-weight:600;
 }
