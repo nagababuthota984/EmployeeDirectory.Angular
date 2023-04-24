@@ -16,9 +16,9 @@ export class SideNavComponent implements OnInit {
     this.departments = new Set();
     this.jobTitles = new Set();
     this.empService.EmployeeData.forEach(element => {
-      this.offices.add(element.Office.toString());
-      this.departments.add(element.Department.toString());
-      this.jobTitles.add(element.JobTitle.toString());
+      this.offices.add(element.office.toString());
+      this.departments.add(element.department.toString());
+      this.jobTitles.add(element.jobTitle.toString());
     });
     
   }

@@ -1,17 +1,17 @@
 import { Department, JobTitle, Office } from './enums/enums';
 
 export class Employee {
-  public Id: string;
-  public FirstName: string;
-  public LastName: string;
-  public PreferredName: string;
+  public id: string;
+  public firstName: string;
+  public lastName: string;
+  public preferredName: string;
   public email: string;
   public contactNumber: string;
-  public Office: Office;
-  public JobTitle: JobTitle;
-  public Department: Department;
+  public office: Office;
+  public jobTitle: JobTitle;
+  public department: Department;
   constructor(
-    Id: string,
+    id: string,
     firstName: string,
     lastName: string,
     email: string,
@@ -20,14 +20,14 @@ export class Employee {
     department: Department,
     office: Office
   ) {
-    this.FirstName = firstName;
-    this.Id = Id;
-    this.LastName = lastName;
-    this.Office = office;
+    this.firstName = firstName;
+    this.id = id;
+    this.lastName = lastName;
+    this.office = office;
     this.email = email;
-    this.JobTitle = jobTitle;
-    this.Department = department;
+    this.jobTitle = jobTitle;
+    this.department = department;
     this.contactNumber = contactNumber;
-    this.PreferredName = `${this.FirstName} ${this.LastName}`;
+    this.preferredName = `${this.firstName} ${this.lastName}`;
   }
 }

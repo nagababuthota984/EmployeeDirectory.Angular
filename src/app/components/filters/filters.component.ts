@@ -1,6 +1,4 @@
-import { outputAst } from '@angular/compiler';
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { SearchFilters } from 'src/app/models/enums/enums';
+import { Component, OnInit } from '@angular/core';
 import { EmployeeService } from 'src/app/services/employee.service';
 
 @Component({
