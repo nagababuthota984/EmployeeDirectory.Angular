@@ -6,8 +6,9 @@ export class ApiConfig{
     public readonly headerDict:HeadersInit = {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
-        'Access-Control-Allow-Headers': 'Content-Type',
-        'Access-Control-Allow-Origin':'*'
+        'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept',
+        'Access-Control-Allow-Origin':'*',
+        'Access-Control-Allow-Methods':'GET, PUT, POST'
       }
 
     prepareDefaultHeaders() : Headers

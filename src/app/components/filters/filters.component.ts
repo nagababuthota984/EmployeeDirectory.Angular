@@ -7,12 +7,11 @@ import { EmployeeService } from 'src/app/services/employee.service';
   styleUrls: ['./filters.component.css']
 })
 export class FiltersComponent implements OnInit {
-  constructor(private empService:EmployeeService) {
-   }
+  constructor(private empService: EmployeeService) {
+  }
 
-  searchKeyword(event:any)
-  {
-      this.empService.raiseSearchTextEmitter(event.target.value);
+  searchKeyword(event: any) {
+    this.empService.raiseSearchTextEmitter(event.target.value);
   }
 
   ngOnInit(): void {

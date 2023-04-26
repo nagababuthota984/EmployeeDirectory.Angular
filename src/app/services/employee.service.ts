@@ -25,37 +25,5 @@ export class EmployeeService {
       );
   }
 
-  searchData(searchText: string, filterBy: SearchFilters): Employee[] {
-    switch (filterBy) {
-      case SearchFilters.FirstName:
-        return this.EmployeeData.filter((emp) =>
-          emp.firstName.toLocaleLowerCase().includes(
-            searchText.toLocaleLowerCase()
-          )
-        );
-      case SearchFilters.LastName:
-        return this.EmployeeData.filter((emp) =>
-          emp.lastName.toLocaleLowerCase().includes(
-            searchText.toLocaleLowerCase()
-          )
-        );
-      case SearchFilters.Department:
-        return this.EmployeeData.filter((emp) =>
-          emp.department.toString()
-            .toLocaleLowerCase()
-            .includes(searchText.toLocaleLowerCase())
-        );
-      case SearchFilters.JobTitle:
-        return this.EmployeeData.filter((emp) =>
-          emp.jobTitle.toString()
-            .toLowerCase()
-            .includes(searchText.toLocaleLowerCase())
-        );
-    }
-    return this.EmployeeData.filter((emp) =>
-      emp.preferredName.toLocaleLowerCase().includes(
-        searchText.toLocaleLowerCase()
-      )
-    );
-  }
+  
 }

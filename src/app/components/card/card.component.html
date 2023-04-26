@@ -3,9 +3,9 @@
         <img src="../../../assets/images/andrew-philips.png" class="images m-2"/>
     </div>
 <div class="col-8">
-    <p class="card-title fw-bold mt-1">{{empName}}</p>
-    <p class="card-text"><small>{{empJobTitle}}</small></p>
-    <p class="card-text"><small>{{empDept}}</small></p>
+    <p class="card-title fw-bold mt-1">{{employee.preferredName}}</p>
+    <p class="card-text"><small>{{getDetailedJobTitle(employee.jobTitle)}}</small></p>
+    <p class="card-text"><small>{{getDetailedDepartment(employee.department)}}</small></p>
     </div>
     
 </div>

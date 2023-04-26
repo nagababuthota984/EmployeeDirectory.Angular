@@ -1,6 +1,7 @@
 export enum SearchFilters {
   FirstName,
   LastName,
+  PreferredName,
   Department,
   Office,
   JobTitle,
@@ -62,7 +63,9 @@ export enum Department {
   BusinessAnalysis,
 }
 
+
 export enum Office{
     India,
     Seattle
 }
+
