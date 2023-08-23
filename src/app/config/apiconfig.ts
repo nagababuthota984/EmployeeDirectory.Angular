@@ -8,7 +8,8 @@ export class ApiConfig{
         'Accept': 'application/json',
         'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept',
         'Access-Control-Allow-Origin':'*',
-        'Access-Control-Allow-Methods':'GET, PUT, POST'
+        'Access-Control-Allow-Methods':'GET, PUT, POST',
+        'charset':'utf-8'
       }
 
     prepareDefaultHeaders() : Headers

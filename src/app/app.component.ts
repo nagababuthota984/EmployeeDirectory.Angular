@@ -13,5 +13,5 @@ export class AppComponent {
 searchTriggered(searchKeyword: string) {
    this.searchText = searchKeyword;
 }
-  title = 'EmployeeDirectory';
+  title = 'Technovert | Employee Directory';
 }

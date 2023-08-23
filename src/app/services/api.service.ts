@@ -6,8 +6,8 @@ import { Employee } from '../models/employee';
 export class ApiService {
   constructor(private httpClient: HttpClient) {}
 
-  public get(url: string, options?: any) {
-    return this.httpClient.get<Employee[]>(url);
+  public get<T>(url: string, options?: any) {
+    return this.httpClient.get<T>(url);
   }
 
   public post(url: string, data: any, options?: any) {

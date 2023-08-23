@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Data } from '@angular/router';
+import { Details } from 'src/app/models/details';
+import { Office, Department, JobTitle } from 'src/app/models/enums/enums';
 import { EmployeeService } from 'src/app/services/employee.service';
 
 @Component({
@@ -8,22 +9,25 @@ import { EmployeeService } from 'src/app/services/employee.service';
   styleUrls: ['./sidenav.component.css']
 })
 export class SideNavComponent implements OnInit {
-  public offices : Set<string>;
-  public departments :Set<string>;
-  public jobTitles:Set<string>;
-  constructor(private empService:EmployeeService) {
-    this.offices = new Set();
-    this.departments = new Set();
-    this.jobTitles = new Set();
-    this.empService.EmployeeData.forEach(element => {
-      this.offices.add(element.office.toString());
-      this.departments.add(element.department.toString());
-      this.jobTitles.add(element.jobTitle.toString());
-    });
-    
+  public offices: Details<Office>[];
+  public departments: Details<Department>[];
+  public jobTitles: Details<JobTitle>[];
+  constructor(private empService: EmployeeService) {
+    this.offices = [];
+    this.departments = [];
+    this.jobTitles = [];
   }
 
   ngOnInit(): void {
+    this.empService.getOffices().subscribe(result => {
+      this.offices = result;
+    });
+    this.empService.getDepartments().subscribe(result => {
+      this.departments = result;
+    });
+    this.empService.getJobTitles().subscribe(result => {
+      this.jobTitles = result;
+    });
   }
 
 }

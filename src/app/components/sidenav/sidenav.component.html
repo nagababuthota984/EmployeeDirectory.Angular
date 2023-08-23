@@ -1,16 +1,16 @@
 <div class="container ms-1">
     <div class="row">
         <p class="fw-bold m-0">Departments</p>
-        <button class="m-0 filter-btn" *ngFor="let dept of departments">{{dept}}</button>
+        <button class="m-0 filter-btn" *ngFor="let dept of departments">{{dept.displayName}}</button>
        
     </div>
     <div class="row">
         <p class="fw-bold m-0 mt-2">Offices</p>
-        <button class="m-0 filter-btn" *ngFor="let office of offices">{{office}}</button>
+        <button class="m-0 filter-btn" *ngFor="let office of offices">{{office.displayName}}</button>
     </div>
     <div class="row">
         <p class="fw-bold m-0 mt-2">Job Titles</p>
-        <button class="m-0 filter-btn" *ngFor="let jobTitle of jobTitles">{{jobTitle}}</button>
+        <button class="m-0 filter-btn" *ngFor="let jobTitle of jobTitles">{{jobTitle.displayName}}</button>
     </div>
 
 </div>

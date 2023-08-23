@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
-import { SearchFilters } from '../models/enums/enums';
+import { Department, JobTitle, Office, SearchFilters } from '../models/enums/enums';
 import { Employee } from '../models/employee';
 import { ApiService } from './api.service';
 import { ApiConfig } from '../config/apiconfig';
+import { Details } from '../models/details';
 @Injectable()
 export class EmployeeService {
   public searchTextEmitter: Subject<string>;
@@ -17,13 +18,20 @@ export class EmployeeService {
     this.searchTextEmitter.next(keyword);
   }
 
-  loadEmployees() {
+  getEmployees() {
     return this.apiService
-      .get(
-        this.apiConfig.API_ENDPOINT + 'Employee/getAllEmp',
+      .get<Employee[]>(
+        this.apiConfig.API_ENDPOINT + `employees`,
         this.apiConfig.prepareDefaultHeaders()
       );
   }
-
-  
+  getOffices(){
+    return this.apiService.get<Details<Office>[]>(this.apiConfig.API_ENDPOINT+`offices`,this.apiConfig.prepareDefaultHeaders());
+  }
+  getDepartments(){
+    return this.apiService.get<Details<Department>[]>(this.apiConfig.API_ENDPOINT+`departments`,this.apiConfig.prepareDefaultHeaders());
+  }
+  getJobTitles(){
+    return this.apiService.get<Details<JobTitle>[]>(this.apiConfig.API_ENDPOINT+`jobtitles`,this.apiConfig.prepareDefaultHeaders());
+  }
 }

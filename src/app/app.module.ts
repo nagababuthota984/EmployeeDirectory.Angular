@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HeaderComponent } from './components/header/header.component';
 import { SideNavComponent } from './components/sidenav/sidenav.component';
 import { FiltersComponent } from './components/filters/filters.component';
@@ -11,7 +11,7 @@ import { ButtonsfilterComponent } from './components/buttonsfilter/buttonsfilter
 import { CardComponent } from './components/card/card.component';
 import { EmployeeService } from './services/employee.service';
 import { ApiService } from './services/api.service';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { ApiConfig } from './config/apiconfig';
 
 @NgModule({
@@ -30,7 +30,9 @@ import { ApiConfig } from './config/apiconfig';
     HttpClientModule,
     NgbModule
   ],
+  //add injectable items in providers list here.
   providers: [EmployeeService,ApiService,ApiConfig],
+  //mention the bootstrapper here.
   bootstrap: [AppComponent]
 })
 export class AppModule { }

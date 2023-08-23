@@ -18,7 +18,7 @@ export class EmployeeListComponent implements OnInit {
 
   ngOnInit(): void {
     try {
-      this.empService.loadEmployees().subscribe(result => {
+      this.empService.getEmployees().subscribe(result => {
         this.employees = this.filteredEmployees = result;
       });
       this.empService.searchTextEmitter.subscribe((value) => {
