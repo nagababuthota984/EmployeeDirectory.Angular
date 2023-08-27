@@ -5,9 +5,9 @@ pipeline{
         }
     }
     stages{
-        stage('Test'){
+        stage('Build'){
             steps{
-                sh "node --version"
+                sh "cd src/app && npm install && ng build -configuration production"
             }
         }
     }
