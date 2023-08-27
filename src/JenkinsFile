@@ -7,11 +7,4 @@ pipeline{
     tools {
         nodejs "node js"
     }
-    stages{
-        stage('Build'){
-            steps{
-                sh 'cd src/app && npm install && ng build -configuration production'
-            }
-        }
-    }
 }
