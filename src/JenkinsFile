@@ -4,6 +4,9 @@ pipeline{
             image 'empdir-angular:0.3'
         }
     }
+    tools {
+        nodejs "nodejs"
+    }
     stages{
         stage('Build'){
             steps{
