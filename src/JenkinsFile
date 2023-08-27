@@ -1,10 +1,14 @@
 pipeline{
     agent{
         docker {
-            image 'empdir-angular:0.3'
+            image 'node:alpine'
         }
     }
-    tools {
-        nodejs "node js"
+    stages{
+        stage('Test'){
+            steps{
+                sh "node --version"
+            }
+        }
     }
 }
