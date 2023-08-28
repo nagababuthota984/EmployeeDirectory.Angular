@@ -1,17 +1,37 @@
-pipeline{
-    agent{
+pipeline {
+    agent {
         dockerfile {
-            filename 'src/Dockerfile'
+            filename '/src/Dockerfile'
         }
     }
+    tools {nodejs "node js"}
     stages{
-        stage('Build'){
-            steps{
-                sh "cd src/app"
-                sh "node --version"
-                sh "npm install"
-                sh "ng build -configuration production"
-            }
+        stage('NPM Install') {
+        steps{ 
+            sh 'npm install'
+            sh 'ng --version'
         }
     }
+
+    stage('Build') {
+        steps{
+            milestone(20)
+            sh 'ng build --prod'
+        }
+    }
+
+    // stage('Archive') {
+    //      steps{
+    //     sh 'tar -cvzf dist.tar.gz --strip-components=1 dist'
+    //     archive 'dist.tar.gz'
+    //      }
+    // }
+
+    // stage('Deploy') {
+    //      steps{
+    //     milestone(20)
+    //     echo "Deploying..."
+    //      }
+    // }
+    // }
 }
